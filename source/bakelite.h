@@ -26,7 +26,6 @@ class Bakelite : public BakkesMod::Plugin::BakkesModPlugin {
   void OnMatchEnter();
   void OnMatchExit();
   void LoadHighlightConfig();
-  std::string GetRocketLeaguePath();
   void OnKeyPressed(ActorWrapper aw, void* params, std::string eventName);
   void OnStatEvent(ServerWrapper caller, void* args);
   void OnRecordingTrigger(std::string name, int startDelta, int endDelta);

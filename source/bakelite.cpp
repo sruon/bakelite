@@ -83,7 +83,8 @@ struct HighlightsData {
       {"LowFive", {false, -5000, 3000, std::chrono::system_clock::now()}},
       {"HoopsSwishGoal",
        {false, -5000, 3000, std::chrono::system_clock::now()}},
-      {"BicycleHit", {false, -5000, 3000, std::chrono::system_clock::now()}}};
+      {"BicycleHit", {false, -5000, 3000, std::chrono::system_clock::now()}},
+      {"OwnGoal", {true, -5000, 3000, std::chrono::system_clock::now()}}};
 
   std::vector<NVGSDK_Highlight> highlights;
 };
@@ -118,19 +119,6 @@ void Bakelite::LoadHighlightConfig() {
     cvarManager->log(os.str());
     i++;
   }
-}
-
-std::string Bakelite::GetRocketLeaguePath() {
-  char ownPth[MAX_PATH];
-  HMODULE hModule = GetModuleHandle(NULL);
-  if (hModule != NULL) {
-    // Use GetModuleFileName() with module handle to get the path
-    GetModuleFileName(hModule, ownPth, (sizeof(ownPth)));
-    auto path = std::filesystem::path(ownPth).remove_filename();
-    return path.string();
-  }
-  // Fallback, doesn't seem to impact anything.
-  return "C:/";
 }
 
 void Bakelite::onLoad() {
@@ -183,10 +171,12 @@ void Bakelite::onLoad() {
   g_highlights.Init(g_highlightsConfig.gameName.c_str(),
                     g_highlightsConfig.defaultLocale.c_str(),
                     &g_highlightsConfig.highlights[0],
-                    g_highlightsConfig.highlights.size(), GetRocketLeaguePath().c_str(),
+                    g_highlightsConfig.highlights.size(), gameWrapper->GetBakkesModPath().string().c_str(),
                     GetCurrentProcessId());
   cvarManager->log("Nvidia Shadowplay Init() complete.");
   cvarManager->log("Bakelite ready!");
+  // Open group now
+  g_highlights.OnOpenGroup(GROUP1_ID);
 }
 
 void Bakelite::onUnload() {
