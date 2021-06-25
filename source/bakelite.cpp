@@ -17,6 +17,8 @@ using namespace std;
 
 char const* GROUP1_ID = "GROUP1";
 
+int PGUP_KEY = 17506;
+
 BAKKESMOD_PLUGIN(Bakelite,
                  "Triggers Nvidia Highlights",
                  "1.1",
@@ -68,7 +70,6 @@ struct HighlightsData {
       {"PoolShot", {false, -5000, 3000, std::chrono::system_clock::now()}},
       {"OvertimeGoal", {false, -5000, 3000, std::chrono::system_clock::now()}},
       {"HatTrick", {false, -5000, 3000, std::chrono::system_clock::now()}},
-      {"Assist", {false, -5000, 3000, std::chrono::system_clock::now()}},
       {"Playmaker", {false, -5000, 3000, std::chrono::system_clock::now()}},
       {"Savior", {false, -5000, 3000, std::chrono::system_clock::now()}},
       {"Shot", {false, -5000, 3000, std::chrono::system_clock::now()}},
@@ -94,6 +95,7 @@ void Bakelite::LoadHighlightConfig() {
   cvarManager->log("Initializing Nvidia Geforce Experience Wrapper.");
   InitGfeSdkWrapper(&g_highlights);
   g_highlightsConfig.gameName = "Rocket League";
+  // TODO: Support user locale
   g_highlightsConfig.defaultLocale = "en-US";
 
   g_highlightsConfig.highlights.resize(
@@ -116,6 +118,19 @@ void Bakelite::LoadHighlightConfig() {
     cvarManager->log(os.str());
     i++;
   }
+}
+
+std::string Bakelite::GetRocketLeaguePath() {
+  char ownPth[MAX_PATH];
+  HMODULE hModule = GetModuleHandle(NULL);
+  if (hModule != NULL) {
+    // Use GetModuleFileName() with module handle to get the path
+    GetModuleFileName(hModule, ownPth, (sizeof(ownPth)));
+    auto path = std::filesystem::path(ownPth).remove_filename();
+    return path.string();
+  }
+  // Fallback, doesn't seem to impact anything.
+  return "C:/";
 }
 
 void Bakelite::onLoad() {
@@ -168,8 +183,8 @@ void Bakelite::onLoad() {
   g_highlights.Init(g_highlightsConfig.gameName.c_str(),
                     g_highlightsConfig.defaultLocale.c_str(),
                     &g_highlightsConfig.highlights[0],
-                    g_highlightsConfig.highlights.size(), "C:/test",
-                    GetCurrentProcessId());  // g_targetPath.c_str()
+                    g_highlightsConfig.highlights.size(), GetRocketLeaguePath().c_str(),
+                    GetCurrentProcessId());
   cvarManager->log("Nvidia Shadowplay Init() complete.");
   cvarManager->log("Bakelite ready!");
 }
@@ -183,7 +198,7 @@ void Bakelite::OnKeyPressed(ActorWrapper aw,
     void* params,
     std::string eventName) {
   KeyPressParams* keyPressData = (KeyPressParams*)params;
-  if (keyPressData->Key.Index == 17506) {
+  if (keyPressData->Key.Index == PGUP_KEY) {
     cvarManager->log("Player requested opening Nvidia summary.");
     g_highlights.OnOpenSummary(&std::vector<char const*>({GROUP1_ID})[0], 1,
                                NVGSDK_HIGHLIGHT_SIGNIFICANCE_NONE,
