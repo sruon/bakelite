@@ -1,0 +1,13 @@
+Nvidia Highlights
+1|Enable recordings|BL_Enable
+1|Show summary on exit|BL_ShowSummaryOnExit
+9|If disabled, you will need to use the key PGUP to trigger Nvidia highlights summary page
+1|Clear existing highlights on new match|BL_ClearHighlightsOnNewMatch
+9|If enabled, unsaved highlights will be deleted when starting a new match.
+4|Delay between event recordings (seconds)|BL_Delay|0|10
+9|Only applies to same event types (e.g. 2 shots in 3 seconds)
+9|
+8|
+9|Use ALT+Z to configure Nvidia Highlights
+8|
+9|Made by sruon

@@ -1,0 +1,13 @@
+
+source/.vs/bakelite/v16/.suo
+*.db
+*.db-shm
+*.db-wal
+*.opendb
+*.ipch
+*.log
+*.recipe
+*.obj
+*.lastbuildstate
+*.tlog
+*.pdb

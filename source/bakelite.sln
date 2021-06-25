@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bakelite", "bakelight.vcxproj", "{EE59968C-4B48-4645-82CC-6D2EC5EB25C8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bakelitegfesdk", "..\..\bakelitegfesdk\source\bakelitegfesdk.vcxproj", "{8711C3F0-629D-4807-AAE1-52C40C9ADB5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE59968C-4B48-4645-82CC-6D2EC5EB25C8}.Release|x64.ActiveCfg = Release|x64
+		{EE59968C-4B48-4645-82CC-6D2EC5EB25C8}.Release|x64.Build.0 = Release|x64
+		{EE59968C-4B48-4645-82CC-6D2EC5EB25C8}.Release|x86.ActiveCfg = Release|Win32
+		{EE59968C-4B48-4645-82CC-6D2EC5EB25C8}.Release|x86.Build.0 = Release|Win32
+		{8711C3F0-629D-4807-AAE1-52C40C9ADB5B}.Release|x64.ActiveCfg = Release|x64
+		{8711C3F0-629D-4807-AAE1-52C40C9ADB5B}.Release|x64.Build.0 = Release|x64
+		{8711C3F0-629D-4807-AAE1-52C40C9ADB5B}.Release|x86.ActiveCfg = Release|Win32
+		{8711C3F0-629D-4807-AAE1-52C40C9ADB5B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DC354D0-2ED2-421F-BACB-0B8CE6B99430}
+	EndGlobalSection
+EndGlobal
