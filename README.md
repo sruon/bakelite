@@ -1,7 +1,14 @@
+![EpicSave](https://i.imgur.com/jlTcq5K.png)
+![Summary](https://i.imgur.com/8TsdYD8.png)
+
 # Bakelite
 A Bakkesmod plugin to support Nvidia Geforce Experience Highlights in Rocket League
 
 > NVIDIA Highlights enables automatic video capture of key moments, clutch kills, and match-winning plays, ensuring gamers’ best gaming moments are always saved. Once a Highlight is captured, gamers can simply share it directly to Facebook, YouTube, or Weibo right from GeForce Experience’s in-game overlay. Additionally, they can also clip their  favorite 15 seconds and share as an animated GIF - all without leaving the game!
+
+## Requirements
+- Nvidia GPU
+- [Geforce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/download/)
 
 ## How to install
 TBD
