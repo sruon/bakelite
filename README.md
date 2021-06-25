@@ -10,6 +10,11 @@ A Bakkesmod plugin to support Nvidia Geforce Experience Highlights in Rocket Lea
 - Nvidia GPU
 - [Geforce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/download/)
 
+## Disclaimer
+This plugin will download **GfeSDK.dll** in your Rocket League folder. This is the official Nvidia Geforce Experience SDK DLL that can be found in a [gated Nvidia repository](https://github.com/NVIDIAGameWorks/GfeSDK)
+
+If you would like to compare the [.dll downloaded by this plugin](https://github.com/sruon/bakelitegfesdk/tree/main/source/redist) with the [upstream](https://github.com/NVIDIAGameWorks/GfeSDK/tree/master/redist/win64), please follow the steps highlighted [on this page](https://developer.nvidia.com/highlights) so that Nvidia can invite you to the organization and gain access to the repository.
+
 ## How to install
 TBD
 
