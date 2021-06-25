@@ -45,6 +45,7 @@ If you've opted out of this feature, you may simply use the **PgUp** key on your
 | Save | :white_check_mark: |
 | HighFive | :white_check_mark: |
 | Assist | :white_check_mark: |
+| OwnGoal | ✅: |
 | Demolish | :x: |
 | Demolition | :x: |
 | Win | :x: |
