@@ -9,5 +9,8 @@ Nvidia Highlights
 9|
 8|
 9|Use ALT+Z to configure Nvidia Highlights directly and filter captured events.
+9|PgUp -> Open Summary page
+9|PgDn -> Trigger manual clipping of last 10 seconds
+9|End -> Trigger deletion of unsaved highlights
 8|
 9|Made by sruon

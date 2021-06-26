@@ -18,7 +18,8 @@ using namespace std;
 char const* GROUP1_ID = "GROUP1";
 
 int PGUP_KEY = 17506;
-
+int PGDN_KEY = 17507;
+int END_KEY = 8216;
 BAKKESMOD_PLUGIN(Bakelite,
                  "Triggers Nvidia Highlights",
                  "1.1",
@@ -57,11 +58,11 @@ struct HighlightsData {
       {"EpicSave", {true, -5000, 3000, std::chrono::system_clock::now()}},
       {"Save", {true, -5000, 3000, std::chrono::system_clock::now()}},
       {"HighFive", {true, -5000, 3000, std::chrono::system_clock::now()}},
-      {"Assist", {true, -5000, 3000, std::chrono::system_clock::now()}},
+      {"Assist", {true, -8000, 5000, std::chrono::system_clock::now()}},
       {"Demolish", {false, -5000, 3000, std::chrono::system_clock::now()}},
-      {"Demolition", {false, -5000, 3000, std::chrono::system_clock::now()}},
-      {"Win", {false, -5000, 3000, std::chrono::system_clock::now()}},
-      {"MVP", {false, -5000, 3000, std::chrono::system_clock::now()}},
+      {"Demolition", {false, -2000, 3000, std::chrono::system_clock::now()}},
+      {"Win", {false, 0, 3000, std::chrono::system_clock::now()}},
+      {"MVP", {false, 0, 3000, std::chrono::system_clock::now()}},
       {"AerialGoal", {false, -5000, 3000, std::chrono::system_clock::now()}},
       {"BackwardsGoal", {false, -5000, 3000, std::chrono::system_clock::now()}},
       {"BicycleGoal", {false, -5000, 3000, std::chrono::system_clock::now()}},
@@ -84,7 +85,8 @@ struct HighlightsData {
       {"HoopsSwishGoal",
        {false, -5000, 3000, std::chrono::system_clock::now()}},
       {"BicycleHit", {false, -5000, 3000, std::chrono::system_clock::now()}},
-      {"OwnGoal", {true, -5000, 3000, std::chrono::system_clock::now()}}};
+        {"OwnGoal", {true, -5000, 3000, std::chrono::system_clock::now()}},
+      {"PlayerEvent", {true, -10000, 2000, std::chrono::system_clock::now()}}};
 
   std::vector<NVGSDK_Highlight> highlights;
 };
@@ -193,6 +195,18 @@ void Bakelite::OnKeyPressed(ActorWrapper aw,
     g_highlights.OnOpenSummary(&std::vector<char const*>({GROUP1_ID})[0], 1,
                                NVGSDK_HIGHLIGHT_SIGNIFICANCE_NONE,
                                NVGSDK_HIGHLIGHT_TYPE_NONE);
+  }
+  if (keyPressData->Key.Index == PGDN_KEY) {
+    cvarManager->log("Player requested custom recording.");
+    OnRecordingTrigger(
+        "PlayerEvent",
+        g_highlightsConfig.highlightsData["PlayerEvent"].startDelta,
+        g_highlightsConfig.highlightsData["PlayerEvent"].endDelta);
+  }
+  if (keyPressData->Key.Index == END_KEY) {
+    cvarManager->log("Player requested clearing highlights.");
+    g_highlights.OnCloseGroup(GROUP1_ID, true);
+    g_highlights.OnOpenGroup(GROUP1_ID);
   }
 }
 
