@@ -11,14 +11,19 @@ A Bakkesmod plugin to support Nvidia Geforce Experience Highlights in Rocket Lea
 - [Geforce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/download/)
 
 ## Disclaimer
-This plugin will download **GfeSDK.dll** in your Rocket League folder. This is the official Nvidia Geforce Experience SDK DLL that can be found in a [gated Nvidia repository](https://github.com/NVIDIAGameWorks/GfeSDK)
+This plugin makes use of **GfeSDK.dll**. This is the official Nvidia Geforce Experience SDK DLL that can be found in a [gated Nvidia repository](https://github.com/NVIDIAGameWorks/GfeSDK)
 
-If you would like to compare the [.dll downloaded by this plugin](https://github.com/sruon/bakelitegfesdk/tree/main/source/redist) with the [upstream](https://github.com/NVIDIAGameWorks/GfeSDK/tree/master/redist/win64), please follow the steps highlighted [on this page](https://developer.nvidia.com/highlights) so that Nvidia can invite you to the organization and gain access to the repository.
+If you would like to compare the [.dll used by this plugin](https://github.com/sruon/bakelitegfesdk/tree/main/source/redist) with the [upstream](https://github.com/NVIDIAGameWorks/GfeSDK/tree/master/redist/win64), please follow the steps highlighted [on this page](https://developer.nvidia.com/highlights) so that Nvidia can invite you to the organization and gain access to the repository.
 
 ## How to install
 TBD
 
 ## How to use
+## Keybinds
+- **ALT+Z** to manage Highlights settings (Settings > Highlights)
+- **PgUp** to open the summary page after capture and save them to Gallery
+- **PgDn** to capture the last 10 seconds
+- **End** to clear unsaved highlights 
 ### Accept permissions
 Upon first loading the plugin, a permission request will be opened by Nvidia Geforce Experience - you must accept the permissions requested (video) in order to proceed.
 ### Head into a Private Match

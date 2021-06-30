@@ -38,5 +38,6 @@
     <None Include="..\plugins\settings\bakelite.set">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="..\README.md" />
   </ItemGroup>
 </Project>

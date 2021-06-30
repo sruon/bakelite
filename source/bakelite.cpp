@@ -125,7 +125,8 @@ void Bakelite::LoadHighlightConfig() {
 }
 
 void Bakelite::LoadGfeSDK() {
-	HINSTANCE hGetProcIDDLL = LoadLibrary("C:\\Users\\sruon\\AppData\\Roaming\\bakkesmod\\bakkesmod\\plugins\\GfeSDK.dll");
+	std::string dllPath = gameWrapper->GetDataFolder().string() + "\\bakelite\\GfeSDK.dll";
+	HINSTANCE hGetProcIDDLL = LoadLibrary(dllPath.c_str());
 	if (!hGetProcIDDLL) {
 		cvarManager->log("Failed to load GfeSDK.dll");
 	}
