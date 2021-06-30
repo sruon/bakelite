@@ -71,7 +71,7 @@ extern "C" {
  * \retval NVGSDK_ERR_SDK_VERSION         - GfeSDK DLL version is too old. Game must distribute a newer version.
                                             See \ref section_version
  */
-NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_Create(NVGSDK_HANDLE** handle, NVGSDK_CreateInputParams const* inParams, NVGSDK_CreateResponse* outParams);
+// NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_Create(NVGSDK_HANDLE** handle, NVGSDK_CreateInputParams const* inParams, NVGSDK_CreateResponse* outParams);
 
 /*!
  * Release the main SDK interface after create.
@@ -83,7 +83,7 @@ NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_Create(NVGSDK_HANDLE** handle, NVG
  * \retval NVGSDK_ERR_UNHANDLED_EXCEPTION - SDK ran into an unhandled error and caught an exception before it
  *                                          returned to client code
  */
-NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_Release(NVGSDK_HANDLE* handle);
+// NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_Release(NVGSDK_HANDLE* handle);
 
 /*!
  * When \ref NVGSDK_CreateInputParams::pollForCallbacks is set to true, it becomes
@@ -92,7 +92,7 @@ NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_Release(NVGSDK_HANDLE* handle);
  *
  * \param handle[in]    - Valid SDK handle returned by NVGSDK_Create
  */
-NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_Poll(NVGSDK_HANDLE* handle);
+// NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_Poll(NVGSDK_HANDLE* handle);
 
 /*!
 * Adjusts the logging level of GfeSDK. Log level documentation is found at
@@ -100,7 +100,7 @@ NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_Poll(NVGSDK_HANDLE* handle);
 *
 * \param fileLvl[in] - Logs at or above this priority will be written to logfile
 */
-NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_SetLogLevel(NVGSDK_LogLevel fileLevel);
+// NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_SetLogLevel(NVGSDK_LogLevel fileLevel);
 
 /*!
  * Pass in a callback function in order to receive the log messages that GfeSDK is
@@ -109,7 +109,7 @@ NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_SetLogLevel(NVGSDK_LogLevel fileLe
  *
  * \param[in] callback - Will be called back with log priority and message
  */
-NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_AttachLogListener(NVGSDK_LoggingCallback callback);
+// NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_AttachLogListener(NVGSDK_LoggingCallback callback);
 
 /*!
 * Adjusts the listener logging level of GfeSDK. This affects calls to the callback
@@ -119,7 +119,7 @@ NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_AttachLogListener(NVGSDK_LoggingCa
 *
 * \param level[in] - Logs at or above this priority will be sent to callback
 */
-NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_SetListenerLogLevel(NVGSDK_LogLevel level);
+// NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_SetListenerLogLevel(NVGSDK_LogLevel level);
 
 /*!
  * Asks the user for permissions needed by the app. This will open up the
@@ -132,7 +132,7 @@ NVGSDK_EXPORT NVGSDK_RetCode NVGSDKApi NVGSDK_SetListenerLogLevel(NVGSDK_LogLeve
  * \param callback[in] - Callback return function as described by \ref section_async
  * \param context[in]  - Opaque context pointer as described by \ref section_async
  */
-NVGSDK_EXPORT void NVGSDKApi NVGSDK_RequestPermissionsAsync(NVGSDK_HANDLE* handle, NVGSDK_RequestPermissionsParams const* params, NVGSDK_EmptyCallback callback, void* context);
+// NVGSDK_EXPORT void NVGSDKApi NVGSDK_RequestPermissionsAsync(NVGSDK_HANDLE* handle, NVGSDK_RequestPermissionsParams const* params, NVGSDK_EmptyCallback callback, void* context);
 
 /*!
  * Returns the language set by the user for the onscreen UI
@@ -149,7 +149,7 @@ NVGSDK_EXPORT void NVGSDKApi NVGSDK_RequestPermissionsAsync(NVGSDK_HANDLE* handl
  *                                          returned to client code
  * \retval NVGSDK_IPC_ERR_NOT_SET - The user has not chosen a language and is using the default
  */
-NVGSDK_EXPORT void NVGSDKApi NVGSDK_GetUILanguageAsync(NVGSDK_HANDLE* handle, NVGSDK_GetUILanguageCallback callback, void* context);
+// NVGSDK_EXPORT void NVGSDKApi NVGSDK_GetUILanguageAsync(NVGSDK_HANDLE* handle, NVGSDK_GetUILanguageCallback callback, void* context);
 
 #ifdef __cplusplus
 }

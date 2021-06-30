@@ -1,6 +1,6 @@
 #pragma once
 #pragma comment(lib, "pluginsdk.lib")
-#pragma comment(lib, "GfeSDK.lib")
+
 #include "bakkesmod/plugin/bakkesmodplugin.h"
 #define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING
 
@@ -26,6 +26,7 @@ class Bakelite : public BakkesMod::Plugin::BakkesModPlugin {
   void OnMatchEnter();
   void OnMatchExit();
   void LoadHighlightConfig();
+  void LoadGfeSDK();
   void OnKeyPressed(ActorWrapper aw, void* params, std::string eventName);
   void OnStatEvent(ServerWrapper caller, void* args);
   void OnRecordingTrigger(std::string name, int startDelta, int endDelta);
