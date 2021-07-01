@@ -156,7 +156,7 @@ void Bakelite::LoadGfeSDK() {
 	NVGSDK_Highlights_OpenGroupAsync =
 		(NVGSDK_Highlights_OpenGroupAsyncfn)GetProcAddress(hGetProcIDDLL, "NVGSDK_Highlights_OpenGroupAsync");
 	NVGSDK_Highlights_CloseGroupAsync =
-		(NVGSDK_Highlights_CloseGroupAsyncfn)GetProcAddress(hGetProcIDDLL, "NVGSDK_Highlights_CloseGroupAsyncfn");
+		(NVGSDK_Highlights_CloseGroupAsyncfn)GetProcAddress(hGetProcIDDLL, "NVGSDK_Highlights_CloseGroupAsync");
 	NVGSDK_Highlights_SetScreenshotHighlightAsync =
 		(NVGSDK_Highlights_SetScreenshotHighlightAsyncfn)GetProcAddress(hGetProcIDDLL, "NVGSDK_Highlights_SetScreenshotHighlightAsync");
 	NVGSDK_Highlights_SetVideoHighlightAsync =
@@ -165,7 +165,6 @@ void Bakelite::LoadGfeSDK() {
 		(NVGSDK_Highlights_OpenSummaryAsyncfn)GetProcAddress(hGetProcIDDLL, "NVGSDK_Highlights_OpenSummaryAsync");
 	NVGSDK_Highlights_GetNumberOfHighlightsAsync =
 		(NVGSDK_Highlights_GetNumberOfHighlightsAsyncfn)GetProcAddress(hGetProcIDDLL, "NVGSDK_Highlights_GetNumberOfHighlightsAsync");
-	std::ostringstream address;
 	return;
 }
 
